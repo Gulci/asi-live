@@ -1,0 +1,23 @@
+{
+  "name": "asi-live",
+  "authors": [
+    "Mario Muniz <bigmariobro@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "SpinKit": "spinkit#^1.2.5",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
+}

@@ -1,0 +1,21 @@
+'use strict'
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+ 
+import App from './components/App';
+
+// Import css
+import './stylesheets/app.css';
+
+// Initialize Firebase
+var config = {
+  apiKey: "your-api-key-here",
+  authDomain: "your-firebase-domain-here",
+  databaseURL: "your-url-here",
+  storageBucket: "your-storage-bucket-here",
+};
+firebase.initializeApp(config);
+
+// Init app
+ReactDOM.render(<App />, document.getElementById('main-app'));

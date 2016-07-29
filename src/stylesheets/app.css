@@ -1,0 +1,91 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+.app-section {
+  padding: 16px;
+}
+
+#loaded-component {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#message {
+  text-align: center;
+}
+
+/* Auth css */
+#user-email {
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+.add-post {
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#uploader-file-input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.post-list-container span {
+    margin-right:25px;
+    display: inline-block;
+}
+
+#post-image-preview {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.post-image-info {
+    background: #DDD;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #DDD;
+    border-radius: 1px;
+}
+
+.post-image img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.post-edit {
+    float: right;
+}
