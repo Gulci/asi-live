@@ -2,11 +2,14 @@
   "name": "asi-live",
   "version": "0.0.1",
   "private": true,
+  "homepage": "http://asi.csustan.edu/asi-live",
   "devDependencies": {
     "react-scripts": "0.2.1"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "firebase": "^3.2.1",
+    "font-awesome": "^4.6.3",
     "react": "^15.2.1",
     "react-bootstrap": "^0.30.1",
     "react-dom": "^15.2.1",

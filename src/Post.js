@@ -3,6 +3,7 @@ import Alert from 'react-s-alert';
 import { Modal, Button } from 'react-bootstrap';
 import Firebase from 'firebase';
 
+import 'font-awesome/css/font-awesome.min.css';
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/stackslide.css'
 
