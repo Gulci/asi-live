@@ -37,6 +37,8 @@ Included in this repository is a reference file named `app.example.js`. Replace 
 
 This app uses create-react-app, a helpful tool that helps automate the creation of react apps. For more information, check out their [repository on GitHub](https://github.com/facebookincubator/create-react-app).
 
+To run for development, simply run `npm start`. To build for production, run `npm run build`.
+
 ## Firebase Structure
 
 Both this app and our mobile apps utilize Firebase to deliver our content to all of our users. The best part about Firebase is that it's free if you're just getting started! Check out their docs [here](https://firebase.google.com/docs/) and get familiar with how it works.
