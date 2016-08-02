@@ -1,22 +1,19 @@
-'use strict'
+import React, { Component } from 'react';
 
-import React from 'react';
+import Firebase from 'firebase';
 
 import PostList from './PostList';
-import ImagePreview from './ImagePreview';
 import Uploader from './Uploader';
 
-module.exports = React.createClass({
-  getInitialState: function() {
-    return {
-      posts: []
-    }
-  },
+class PostManager extends Component {
+  state = {
+    posts: []
+  }
 
-  componentDidMount: function() {
-    var postsRef = firebase.database().ref(this.props.child);
+  componentDidMount() {
+    var postsRef = Firebase.database().ref(this.props.child);
 
-    postsRef.on('child_added', function (snapshot) { 
+    postsRef.on('child_added', (snapshot) => {
       var data = snapshot.val();
       data['postKey'] = snapshot.key;
 
@@ -26,14 +23,14 @@ module.exports = React.createClass({
       this.setState({
         posts: freshArray
       });
-    }.bind(this), function(errorObject) {
+    }, (errorObject) => {
       alert('For some reason, reading failed: ' + errorObject.code);
     });
 
-    postsRef.on('child_removed', function(snapshot) {
+    postsRef.on('child_removed', (snapshot) => {
       var freshArray = this.state.posts;
       for(var i = 0; i < freshArray.length; i++) {
-        if(freshArray[i].postKey == snapshot.key) {
+        if(freshArray[i].postKey === snapshot.key) {
           freshArray.splice(i, 1);
           break;
         }
@@ -42,10 +39,10 @@ module.exports = React.createClass({
       this.setState({
         posts: freshArray
       });
-    }.bind(this));
-  },
+    });
+  }
 
-  render: function() {
+  render() {
     return (
       <div className="container">
         <div className="add-post row">
@@ -56,4 +53,6 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default PostManager;

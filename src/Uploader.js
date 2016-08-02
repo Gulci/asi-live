@@ -1,25 +1,23 @@
-'use strict'
+import React, { Component } from 'react';
 
-import React from 'react';
 import Alert from 'react-s-alert';
+import Firebase from 'firebase';
 
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/stackslide.css';
 
-module.exports = React.createClass({
-  getInitialState: function() {
-    return ({
-      file: null
-    })
-  },
+class Uploader extends Component {
+  state = {
+    file: null
+  }
 
-  componentDidMount: function() {
+  componentDidMount() {
     document.getElementById('uploader-file-input').addEventListener('change', this.handleFileChange, false);
-  },
+  }
 
-  handleFileUpload: function() {
-    var storageRef = firebase.storage().ref();
-    var postsRef = firebase.database().ref(this.props.child);
+  handleFileUpload = () => {
+    var storageRef = Firebase.storage().ref();
+    var postsRef = Firebase.database().ref(this.props.child);
 
     if(this.state.file === null) {
       Alert.error('Please select an image to upload.', {
@@ -32,15 +30,15 @@ module.exports = React.createClass({
       var metadata = this.state.file.metadata;
       var uploadTask = storageRef.child(this.props.child + '/' + file.name).put(file, metadata);
 
-      uploadTask.on('state_changed', function(snapshot) {
+      uploadTask.on('state_changed', (snapshot) => {
 
-      }, function(error) {
+      }, (error) => {
         Alert.error('There was an arror uploading: ' + error, {
           position: 'top-right',
           effect: 'stackslide',
           offset: 50
         });
-      }, function() {
+      }, () => {
         var post = {
           imageURL: uploadTask.snapshot.downloadURL
         };
@@ -55,9 +53,9 @@ module.exports = React.createClass({
         });
       })
     }
-  },
+  }
 
-  handleFileChange: function(e) {
+  handleFileChange = (e) => {
     e.stopPropagation();
     e.preventDefault();
     var newFile = {
@@ -70,9 +68,9 @@ module.exports = React.createClass({
     this.setState({
       file: newFile
     });
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div className="uploader">
         <h2>Add a new post:</h2>
@@ -81,4 +79,6 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default Uploader;

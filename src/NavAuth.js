@@ -1,17 +1,17 @@
-'use strict'
+import React, { Component } from 'react';
 
-import React from 'react';
+import Firebase from 'firebase';
 
-module.exports = React.createClass({
-  handleSignOut: function() {
-    firebase.auth().signOut();
-  },
+class NavAuth extends Component {
+  handleSignOut() {
+    Firebase.auth().signOut();
+  }
 
-  handleSignIn: function() {
+  handleSignIn() {
     var email = document.getElementById('auth-email').value;
     var password = document.getElementById('auth-password').value;
 
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    Firebase.auth().signInWithEmailAndPassword(email, password).catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
 
@@ -21,9 +21,9 @@ module.exports = React.createClass({
         alert(errorMessage);
       }
     })
-  },
+  }
 
-  render: function() {
+  render() {
     var auth;
 
     if (this.props.auth) {
@@ -72,4 +72,6 @@ module.exports = React.createClass({
       </ul>
     );
   }
-});
+}
+
+export default NavAuth;

@@ -1,11 +1,9 @@
-'use strict'
-
-import React from 'react';
+import React, { Component } from 'react';
 
 import Message from './Message';
 
-module.exports = React.createClass({
-  render: function() {
+class SectionSelector extends Component {
+  render() {
     var selection;
 
     if (this.props.auth) {
@@ -49,4 +47,6 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default SectionSelector;

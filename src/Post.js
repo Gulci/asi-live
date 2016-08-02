@@ -1,33 +1,30 @@
-'use strict'
-
-import React from 'react';
+import React, { Component } from 'react';
 import Alert from 'react-s-alert';
 import { Modal, Button } from 'react-bootstrap';
+import Firebase from 'firebase';
 
 import 'react-s-alert/dist/s-alert-default.css';
 import 'react-s-alert/dist/s-alert-css-effects/stackslide.css'
 
-module.exports = React.createClass({
-  getInitialState() {
-    return ({
-      showDeleteModal: false
-    })
-  },
+class Post extends Component {
+  state = {
+    showDeleteModal: false
+  }
 
-  showDeleteModal: function() {
+  showDeleteModal = () => {
     this.setState({
       showDeleteModal: true
     });
-  },
+  }
 
-  closeDeleteModal: function() {
+  closeDeleteModal = () => {
     this.setState({
       showDeleteModal: false
     });
-  },
+  }
 
-  handleDelete: function() {
-    var postsRef = firebase.database().ref(this.props.child);
+  handleDelete = () => {
+    var postsRef = Firebase.database().ref(this.props.child);
     postsRef.child(this.props.postKey).remove();
 
     Alert.success('Post deleted!', {
@@ -35,9 +32,9 @@ module.exports = React.createClass({
       effect: 'stackslide',
       offset: 50
     });
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <li className="post-li list-group-item">
@@ -52,7 +49,7 @@ module.exports = React.createClass({
           <div className="post-list-container">
             <span className="post-image-info">
               <div className="post-image">
-                <img src={this.props.imageURL} />
+                <img alt="post-preview" src={this.props.imageURL} />
               </div>
             </span>
           </div>
@@ -72,4 +69,6 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}
+
+export default Post;

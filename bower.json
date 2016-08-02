@@ -1,10 +1,10 @@
 {
   "name": "asi-live",
+  "description": "",
+  "main": "",
   "authors": [
     "Mario Muniz <bigmariobro@gmail.com>"
   ],
-  "description": "",
-  "main": "index.html",
   "license": "MIT",
   "homepage": "",
   "private": true,
@@ -16,8 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.6",
-    "SpinKit": "spinkit#^1.2.5",
-    "font-awesome": "fontawesome#^4.6.3"
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
   }
 }
