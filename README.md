@@ -9,13 +9,6 @@ First, install the needed dependencies.
 
 #### 1. Dependencies
 
-##### Bower
-
-Run `bower install` to install the bower dependencies.
-
-- [Bootstrap](http://getbootstrap.com/)
-- [font-awesome](http://fontawesome.io/)
-
 ##### Node modules
 
 Run `npm install` to install the dependencies.
