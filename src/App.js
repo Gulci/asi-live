@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import Alert from 'react-s-alert';
 import Firebase from 'firebase';
 
-import MainNavigationBar from './MainNavigationBar';
-import SectionSelector from './SectionSelector';
-import PostManager from './PostManager';
+import MainNavigationBar from './components/MainNavigationBar';
+import SectionSelector from './components/SectionSelector';
+import PostManager from './components/PostManager';
 import './App.css';
 
 class App extends Component {
