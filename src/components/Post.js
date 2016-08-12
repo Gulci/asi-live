@@ -49,9 +49,7 @@ class Post extends Component {
           </div>
           <div className="post-list-container">
             <span className="post-image-info">
-              <div className="post-image">
-                <img alt="post-preview" src={this.props.imageURL} />
-              </div>
+              <img className="img-responsive" alt="post-preview" src={this.props.imageURL} />
             </span>
           </div>
         </li>
