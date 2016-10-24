@@ -74,7 +74,7 @@ class Uploader extends Component {
     return (
       <div className="uploader">
         <h2>Add a new post:</h2>
-        <input type="file" id="uploader-file-input" name="post" />
+        <input type="file" id="uploader-file-input" />
         <button type="button" onClick={this.handleFileUpload} className="btn btn-default">Post</button>
       </div>
     );

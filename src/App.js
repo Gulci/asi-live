@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Alert from 'react-s-alert';
 import Firebase from 'firebase';
 
+import DiscountManager from './components/DiscountManager';
 import MainNavigationBar from './components/MainNavigationBar';
 import SectionSelector from './components/SectionSelector';
 import PostManager from './components/PostManager';
@@ -57,6 +58,11 @@ class App extends Component {
       case '#/merch':
         if (this.state.user) {
           componentToLoad = <PostManager child="merch" auth={this.state.user} />
+        }
+        break;
+      case '#/discounter':
+        if (this.state.user) {
+          componentToLoad = <DiscountManager child="discounts" auth={this.state.user} />
         }
         break;
       default:

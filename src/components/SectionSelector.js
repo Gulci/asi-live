@@ -20,16 +20,28 @@ class SectionSelector extends Component {
                   Merchandise &raquo;
               </a>
             </p>
-         </div>
+          </div>
           <div className="app-section col-md-4">
             <h2>What's Up</h2>
-            <p>Create a new What's Up post. Creating a post will notify users of the app!</p>
+            <p>Create a new What's Up post.</p>
             <p>
               <a 
                 className="btn btn-default" 
                 href="#/posts" 
                 role="button">
                   Posts &raquo;
+              </a>
+            </p>
+          </div>
+          <div className="app-section col-md-4">
+            <h2>Discounter</h2>
+            <p>Add a new Discounter business.</p>
+            <p>
+              <a 
+                className="btn btn-default" 
+                href="#/discounter" 
+                role="button">
+                  Discounter &raquo;
               </a>
             </p>
           </div>
